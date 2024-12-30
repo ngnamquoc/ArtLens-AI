@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use server";
 
 import { revalidatePath } from "next/cache";
@@ -7,9 +9,11 @@ import User from "../database/models/user.model";
 import Image from "../database/models/image.model";
 import { redirect } from "next/navigation";
 
+
 import { v2 as cloudinary } from 'cloudinary'
 
-const populateUser = (query: any) => query.populate({
+
+const populateUser = (query:any) => query.populate({
   path: 'author',
   model: User,
   select: '_id firstName lastName clerkId'
