@@ -16,7 +16,7 @@ if (!cached) {
   };
 }
 
-export const connecToDatabase = async () => {
+export const connectToDatabase = async () => {
   if (cached.conn) {
     return cached.conn;
   }
