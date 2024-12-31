@@ -23,7 +23,7 @@ const populateUser = (query:any) => query.populate({
 export async function addImage({ image, userId, path }: AddImageParams) {
   try {
     await connectToDatabase();
-
+    //find the author
     const author = await User.findById(userId);
 
     if (!author) {
@@ -47,7 +47,7 @@ export async function addImage({ image, userId, path }: AddImageParams) {
 export async function updateImage({ image, userId, path }: UpdateImageParams) {
   try {
     await connectToDatabase();
-
+    //find img to update
     const imageToUpdate = await Image.findById(image._id);
 
     if (!imageToUpdate || imageToUpdate.author.toHexString() !== userId) {
