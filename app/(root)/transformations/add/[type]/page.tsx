@@ -9,11 +9,12 @@ import { redirect } from "next/navigation";
 const AddTransformationTypePage = async ({
   params: { type },
 }: SearchParamProps) => {
-  const { id } = await currentUser();  // console.log(id);
-  if (!id) redirect("/sign-in");
+  const user = await currentUser();
+  const userId=user?.id;
+  if (!userId) redirect("/sign-in");
 
   const transformation = transformationTypes[type];
-  const user = await getUserById(id);
+  const myUser = await getUserById(userId);
   // console.log(user);
 
   return (
@@ -22,9 +23,9 @@ const AddTransformationTypePage = async ({
       <section className="mt-10">
         <TransformationForm
           action="Add"
-          userId={user._id}
+          userId={myUser._id}
           type={transformation.type as TransformationTypeKey}
-          creditBalance={user.creditBalance}
+          creditBalance={myUser.creditBalance}
         />
       </section>
     </>
