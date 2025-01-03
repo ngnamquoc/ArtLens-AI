@@ -112,7 +112,7 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
       secure: true,
     })
 
-    let expression = 'folder=imaginify';
+    let expression = 'folder=artlens-ai';
 
     if (searchQuery) {
       expression += ` AND ${searchQuery}`
@@ -133,21 +133,22 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
         }
       }
     }
-
+    //number of items to skip to reach the current page
     const skipAmount = (Number(page) -1) * limit;
 
     const images = await populateUser(Image.find(query))
       .sort({ updatedAt: -1 })
       .skip(skipAmount)
       .limit(limit);
-    
+    //Counts how many documents in the Image collection match the specified query
     const totalImages = await Image.find(query).countDocuments();
+    //Counts the total number of documents in the Image collection, regardless of any filters
     const savedImages = await Image.find().countDocuments();
 
     return {
-      data: JSON.parse(JSON.stringify(images)),
-      totalPage: Math.ceil(totalImages / limit),
-      savedImages,
+      data: JSON.parse(JSON.stringify(images)), // Array of images on the current page
+      totalPage: Math.ceil(totalImages / limit), //documents in the Image collection match the specified query
+      savedImages, //total number of documents in the Image collection
     }
   } catch (error) {
     handleError(error)
