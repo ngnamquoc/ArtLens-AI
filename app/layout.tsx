@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const IBMPlex = IBM_Plex_Sans({
-  variable: "--font-ibm-plex",
+const ArchivoFont = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight:['400','500','600','700']
+  weight: ['400', '500', '600', '700']
 });
 
 
@@ -23,10 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{variables:{colorPrimary:'#624cf5'}}} >
+    <ClerkProvider appearance={{variables:{colorPrimary:'#00B4D8'}}} >
       <html lang="en">
       <body
-        className={cn("font-IBMPlex antialiased", IBMPlex.variable)}
+        className={cn("font-archivo antialiased", ArchivoFont.variable)}
       >
         {children}
       </body>

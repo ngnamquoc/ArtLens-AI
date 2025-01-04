@@ -32,7 +32,7 @@ const SideBar = () => {
                     className={`sidebar-nav_element group
                         ${
                           isActive
-                            ? "bg-purple-gradient text-white"
+                            ? "bg-gradient-to-r from-blue-500 to-blue-700 text-white"
                             : "text-gray-700"
                         }`}
                   >
@@ -83,7 +83,7 @@ const SideBar = () => {
             </ul>
           </SignedIn>
           <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button asChild className="button bg-gradient-to-r from-blue-500 to-blue-700 bg-cover">
                 <Link href="/sign-in">Login</Link>
             </Button>
 
