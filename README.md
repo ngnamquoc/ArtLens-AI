@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ArtLens AI
 
-## Getting Started
+ArtLens AI is an advanced image processing application built using **Next.js**, **Clerk**, **Cloudinary**. The platform enables users to apply powerful AI-driven features like image restoration, recoloring, object removal, generative filling, and background removal to their images.
 
-First, run the development server:
+## Demo
+You can try a live demo of ArtLens AI [here](https://art-lens-ai.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## Motivation
+
+With the growing need for advanced image editing tools, ArtLens AI aims to provide an intuitive platform for users to enhance their images effortlessly. Whether it's for personal use, professional design, or creative projects, ArtLens AI offers a range of features to meet the diverse needs of image manipulation and restoration.
+
+
+## Installation
+
+  ```bash
+    git clone https://github.com/ngnamquoc/ArtLens-AI.git
+    cd ArtLens-AI
+    npm install
+    npm run dev
 ```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Image Restoration: Restore old or damaged images to their original quality.
+* Recoloring: Transform black-and-white images into vibrant, colorized versions.
+* Object Removal: Remove unwanted objects seamlessly from images.
+* Generative Filling: Fill in missing portions of images using AI-based predictions.
+* Background Removal: Isolate the subject from the background for easy compositing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Architecture Overview
+* Next.js
+* TypeScript 
+* TailwindCSS
+* Shadcn
+* MongoDB
+* Clerk
+* Cloudinary
+* Stripe
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Front-End Design
+The front-end is built with Next.js and TailwindCSS, providing a smooth user experience for uploading, processing, and downloading images. The app is responsive and works across a variety of devices.
 
-## Learn More
+<img src="demo/demo1.png" width="300" />
 
-To learn more about Next.js, take a look at the following resources:
+## Future Improvements
+* Add additional image processing features, such as style transfer and image upscaling.
+* Improve AI processing speed and accuracy for faster image restoration and recoloring.
+  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
